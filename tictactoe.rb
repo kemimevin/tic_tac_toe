@@ -60,7 +60,7 @@ class TicTacToe
         @first_turn = @player_2
         @second_turn = @player_1
     end
-    puts "#{@first_turn} goes first for this game."
+    puts "#{@first_turn} goes first for this game. Pick a number (1-9) to start the game."
   end
 
   def turn_count
@@ -88,10 +88,10 @@ class TicTacToe
     player_input = gets.chomp
     index = index_player_input(player_input)
     if valid_move?(index)
-      puts "Please choose a number (1-9) for your turn."
       player_marker = current_player_marker
       place_player_marker(index, player_marker)
       display_board
+      puts "Please choose a number (1-9) for your turn."
     elsif !(index.between?(0,8))
         puts "Not a valid option."
     else
